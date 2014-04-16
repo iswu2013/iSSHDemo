@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+ <!DOCTYPE struts PUBLIC  
+       "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"  
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring" />
+	<package name="struts2" extends="struts-default">
+		<action name="login" class="loginAction">
+			<result name="success" type="redirectAction">student!printall</result>
+			<result name="error">error.jsp</result>
+			<result name="input">index.jsp</result>
+		</action>
+		
+		<action name="student" class="studentAction">
+			<result name="printall">student/printall.jsp</result>
+			<result name="del" type="redirectAction">student!printall</result>
+			<result name="findId">student/xiugai.jsp</result>
+			<result name="add" type="redirectAction">student!printall</result>
+			<result name="xiugai" type="redirectAction">student!printall</result>
+			<result name="input">index.jsp</result>
+		</action>
+	</package>
+</struts>  
